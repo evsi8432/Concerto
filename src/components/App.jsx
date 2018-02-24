@@ -1,5 +1,5 @@
 import React from 'react';
-import NewTrackButton from './NewTrackButton';
+import CustomButton from './CustomButton';
 
 import NavBar from './NavBar';
 
@@ -9,8 +9,8 @@ export default class App extends React.Component {
           <div>
             <NavBar />
             <div style={{textAlign: 'center'}}>
-                <NewTrackButton />
-                <h1>Hello World</h1>
+                <CustomButton name="New Track"/>
+                <CustomButton name="Play Concerto"/>
             </div>
           </div>);
     }
