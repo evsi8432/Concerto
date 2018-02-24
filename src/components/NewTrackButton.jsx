@@ -1,11 +1,8 @@
 import React from 'react'
 import RaisedButton from 'material-ui/RaisedButton';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-var buttonStyle = {
-  margin: '10px 10px 10px 0'
-};
-
-class NewTrackButton extends React.component{
+export default class NewTrackButton extends React.Component{
 
   constructor(props){
     super(props);
@@ -16,14 +13,15 @@ class NewTrackButton extends React.component{
 
   render(){
     return(
-      <RaisedButton
-        className="btn btn-default"
-        style={buttonStyle}
-        onClick={this.props.handleClick}>
+      <MuiThemeProvider>
+        <RaisedButton
+          className="btn btn-default"
+          onClick={this.props.handleClick}>
         
-        {this.state.label}
+          {this.state.label}
         
-      </RaisedButton>
+        </RaisedButton>
+      </MuiThemeProvider>
     );
   }
 }
