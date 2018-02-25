@@ -1,7 +1,6 @@
 import React from 'react';
-import {RadioButton, RadioButtonGroup} from 'material-ui/RadioButton';
-import ActionFavorite from 'material-ui/svg-icons/action/favorite';
-import ActionFavoriteBorder from 'material-ui/svg-icons/action/favorite-border';
+
+import MusicComponent from './MusicComponent';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const styles = {
@@ -22,6 +21,7 @@ export default class TrackColumn extends React.Component {
       this.state = {
         isOn: ['not_light', 'not_light', 'not_light'],
       };
+      this.radioClick = this.radioClick.bind(this);
     }
 
     componentDidMount() {
@@ -41,18 +41,13 @@ export default class TrackColumn extends React.Component {
 
     render() {
       const radios = [];
-      for (var i = 0; i < this.state.isOn.length; i++) {
-        radios.push(<RadioButton
-                        value={this.state.isOn[i]}
-                        style={styles.radioButton}
-                        onClick={this.radioClick(i)}
-                      />)
+      for (let i = 0; i < this.state.isOn.length; i++) {
+        const clickFunc = this.radioClick(i);
+        radios.push(<MusicComponent isOn={false} />);
       }
         return (
-          <MuiThemeProvider >
-            <div style={styles.block}>
-            { radios }
-            </div>
-          </MuiThemeProvider>);
+          <div style={styles.block}>
+          { radios }
+          </div>);
     }
 }
