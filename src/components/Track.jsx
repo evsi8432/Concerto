@@ -4,6 +4,7 @@ import Paper from 'material-ui/Paper';
 
 import TrackColumn from './TrackColumn';
 
+const NUM_COLS = 16;
 
 const style = {
   height: 135,
@@ -26,25 +27,16 @@ export default class Track extends React.Component {
     }
 
     render() {
+        const cols = [];
+        for (let i = 1; i <= NUM_COLS; i++) {
+          cols.push(<TrackColumn trackNum={this.props.trackNum}
+                      colNum={i}
+                    />);
+        }
         return (
           <MuiThemeProvider>
             <Paper style={style} zDepth={3}>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
-              <TrackColumn/>
+              { cols }
             </Paper>
           </MuiThemeProvider>);
     }

@@ -2,6 +2,7 @@ import React from 'react';
 
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import { setMusicComponent } from './fire';
 
 const styles = {
   block: {
@@ -28,6 +29,9 @@ export default class MusicComponent extends React.Component {
     this.setState(() => {
       return {isOn: !(this.state.isOn)}
     });
+    setMusicComponent(this.props.taskNum,
+                      this.props.colNum,
+                      this.props.compNum, this.state.isOn);
   }
 
   render() {

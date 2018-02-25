@@ -10,7 +10,7 @@ export default class TrackView extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      tracks: ['tmp'] // This will be populated once component mounts.
+      numTracks: 2, // This will be populated once component mounts.
     };
   }
 
@@ -29,9 +29,9 @@ export default class TrackView extends React.Component {
 
   render() {
     const trackComps = [];
-    this.state.tracks.forEach((trackId) => {
-      trackComps.push(<Track trackId={trackId} />);
-    });
+    for (let i = 1; i <= this.state.numTracks; i++) {
+      trackComps.push(<Track trackNum={i} />);
+    }
     return (
       <div>
         {trackComps}
