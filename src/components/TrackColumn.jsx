@@ -7,9 +7,12 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 const styles = {
   block: {
     maxWidth: 250,
+    display: 'inline-block',
   },
   radioButton: {
     marginBottom: 16,
+    width: 20,
+    height: 20,
   },
 };
 
@@ -46,8 +49,10 @@ export default class TrackColumn extends React.Component {
                       />)
       }
         return (
-          <MuiThemeProvider>
+          <MuiThemeProvider >
+            <div style={styles.block}>
             { radios }
+            </div>
           </MuiThemeProvider>);
     }
 }
