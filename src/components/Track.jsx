@@ -6,11 +6,14 @@ import TrackColumn from './TrackColumn';
 
 
 const style = {
-  height: 125,
-  width: '90vw',
+  height: 135,
+  width: '320',
   margin: 40,
+  marginLeft: '25%',
+  marginRight: '25%',
   textAlign: 'center',
   display: 'inline-block',
+  padding: 15
 };
 
 export default class Track extends React.Component {
@@ -26,6 +29,17 @@ export default class Track extends React.Component {
         return (
           <MuiThemeProvider>
             <Paper style={style} zDepth={3}>
+              <TrackColumn/>
+              <TrackColumn/>
+              <TrackColumn/>
+              <TrackColumn/>
+              <TrackColumn/>
+              <TrackColumn/>
+              <TrackColumn/>
+              <TrackColumn/>
+              <TrackColumn/>
+              <TrackColumn/>
+              <TrackColumn/>
               <TrackColumn/>
               <TrackColumn/>
               <TrackColumn/>
