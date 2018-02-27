@@ -1,2 +1,2 @@
 # Concerto
-Collaborative Music Platform
+Experimenting with Javascript and React
